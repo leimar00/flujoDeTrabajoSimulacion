@@ -1,8 +1,7 @@
 package co.edu.cesde.selection.domain.enums;
 
 public enum EstadoSeleccion {
-
-    EN_PROCESO,
+    PENDIENTE,
     ENTREVISTADO,
     APROBADO,
     RECHAZADO

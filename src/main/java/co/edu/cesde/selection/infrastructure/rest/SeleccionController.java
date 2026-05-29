@@ -1,54 +1,36 @@
 package co.edu.cesde.selection.infrastructure.rest;
 
+import co.edu.cesde.selection.application.dto.AspiranteDTO;
+import co.edu.cesde.selection.application.dto.ProcesoDTO;
+import co.edu.cesde.selection.application.port.input.SeleccionServicePort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/seleccion")
+@CrossOrigin(origins = "*")
 public class SeleccionController {
 
+    private final SeleccionServicePort servicePort;
+
+    public SeleccionController(SeleccionServicePort servicePort) {
+        this.servicePort = servicePort;
+    }
+
     @PostMapping
-    public ResponseEntity<?> iniciarProceso(@RequestBody Object dto) {
-        return null;
-    }
-
-    @PostMapping("/{id}/entrevistas")
-    public ResponseEntity<?> registrarEntrevista(@PathVariable Long id, @RequestBody Object cmd) {
-        return null;
-    }
-
-    @GetMapping("/{id}/entrevistas")
-    public ResponseEntity<?> listarEntrevistas(@PathVariable Long id) {
-        return null;
-    }
-
-    @GetMapping
-    public ResponseEntity<?> listar(@RequestParam(required = false) String estado) {
-        return null;
-    }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<?> buscarPorId(@PathVariable Long id) {
-        return null;
+    public ResponseEntity<ProcesoDTO> iniciarProceso(@RequestBody AspiranteDTO dto) {
+        return ResponseEntity.ok(servicePort.iniciarProceso(dto));
     }
 
     @PutMapping("/{id}/aprobar")
-    public ResponseEntity<?> aprobar(@PathVariable Long id) {
-        return null;
+    public ResponseEntity<Void> aprobar(@PathVariable Long id) {
+        servicePort.aprobar(id);
+        return ResponseEntity.noContent().build();
     }
 
-    @PutMapping("/{id}/rechazar")
-    public ResponseEntity<?> rechazar(@PathVariable Long id, @RequestBody Object motivo) {
-        return null;
-    }
-
-    @GetMapping("/aprobados")
-    public ResponseEntity<?> listarAprobados() {
-        return null;
-    }
-
-    @GetMapping("/export/csv")
-    public ResponseEntity<?> exportarCSV(@RequestParam(required = false) String estado) {
-        return null;
+    @GetMapping
+    public ResponseEntity<List<ProcesoDTO>> listarAprobados() {
+        return ResponseEntity.ok(servicePort.listarAprobados());
     }
 }

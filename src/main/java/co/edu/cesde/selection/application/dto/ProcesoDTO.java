@@ -1,102 +1,50 @@
 package co.edu.cesde.selection.application.dto;
 
-import java.time.LocalDate;
-import java.util.List;
-
-
 public class ProcesoDTO {
+    private Long idAspirante;
+    private String nombreCompleto;
+    private String cargo;
+    private String estadoActual;
 
-    private Long id;
-    private Long aspiranteId;
-    private String nombreAspirante;
-    private String cargoAplicado;
-    private String estado;
-    private Double puntajeFinal;
-    private LocalDate fechaInicio;
-    private LocalDate fechaDecision;
-    private String observaciones;
-    private List<EntrevistaDTO> entrevistas;
-
-
-        public Long getId() {
-            return id;
-        }
-
-        public void setId(Long id) {
-            this.id = id;
-        }
-
-        public Long getAspiranteId() {
-            return aspiranteId;
-        }
-
-        public void setAspiranteId(Long aspiranteId) {
-            this.aspiranteId = aspiranteId;
-        }
-
-        public String getNombreAspirante() {
-            return nombreAspirante;
-        }
-
-        public void setNombreAspirante(String nombreAspirante) {
-            this.nombreAspirante = nombreAspirante;
-        }
-
-        public String getCargoAplicado() {
-            return cargoAplicado;
-        }
-
-        public void setCargoAplicado(String cargoAplicado) {
-            this.cargoAplicado = cargoAplicado;
-        }
-
-        public String getEstado() {
-            return estado;
-        }
-
-        public void setEstado(String estado) {
-            this.estado = estado;
-        }
-
-        public Double getPuntajeFinal() {
-            return puntajeFinal;
-        }
-
-        public void setPuntajeFinal(Double puntajeFinal) {
-            this.puntajeFinal = puntajeFinal;
-        }
-
-        public LocalDate getFechaInicio() {
-            return fechaInicio;
-        }
-
-        public void setFechaInicio(LocalDate fechaInicio) {
-            this.fechaInicio = fechaInicio;
-        }
-
-        public LocalDate getFechaDecision() {
-            return fechaDecision;
-        }
-
-        public void setFechaDecision(LocalDate fechaDecision) {
-            this.fechaDecision = fechaDecision;
-        }
-
-        public String getObservaciones() {
-            return observaciones;
-        }
-
-        public void setObservaciones(String observaciones) {
-            this.observaciones = observaciones;
-        }
-
-        public List<EntrevistaDTO> getEntrevistas() {
-            return entrevistas;
-        }
-
-        public void setEntrevistas(List<EntrevistaDTO> entrevistas) {
-            this.entrevistas = entrevistas;
-        }
+    public ProcesoDTO() {
     }
 
+    public ProcesoDTO(Long idAspirante, String nombreCompleto, String cargo, String estadoActual) {
+        this.idAspirante = idAspirante;
+        this.nombreCompleto = nombreCompleto;
+        this.cargo = cargo;
+        this.estadoActual = estadoActual;
+    }
 
+    public Long getIdAspirante() {
+        return idAspirante;
+    }
+
+    public void setIdAspirante(Long idAspirante) {
+        this.idAspirante = idAspirante;
+    }
+
+    public String getNombreCompleto() {
+        return nombreCompleto;
+    }
+
+    public void setNombreCompleto(String nombreCompleto) {
+        this.nombreCompleto = nombreCompleto;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
+    public String getEstadoActual() {
+        return estadoActual;
+    }
+
+    public void setEstadoActual(String estadoActual) {
+        this.estadoActual = estadoActual;
+    }
+}

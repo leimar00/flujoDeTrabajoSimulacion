@@ -1,12 +1,15 @@
 package co.edu.cesde.selection.application.dto;
 
+
 import lombok.Data;
 
 @Data
 public class AspiranteDTO {
     private Long id;
-    private String nombres;
-    private String apellidos;
+    private String nombre;
+    private String apellido;
     private String email;
-    private String estado;
+    private String telefono;
+    private String cargo;
+    private String estadoSeleccion;
 }

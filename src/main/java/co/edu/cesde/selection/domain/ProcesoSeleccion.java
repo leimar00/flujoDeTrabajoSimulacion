@@ -1,124 +1,60 @@
 package co.edu.cesde.selection.domain;
-import java.time.LocalDate;
 
 import co.edu.cesde.selection.domain.enums.EstadoSeleccion;
+import java.time.LocalDate;
 
 public class ProcesoSeleccion {
-
-    private Long id, aspiranteId;
-    private String nombreAspirante, cargoAplicado, observaciones;
+    private Long id;
+    private Long aspiranteId;
+    private String nombreAspirante;
+    private String cargoAplicado;
     private EstadoSeleccion estado;
-    private double puntajeFinal;
-    private LocalDate fechaInicio, fechaDecision;
-
-    public ProcesoSeleccion(Long id, Long aspiranteId, String nombreAspirante, String cargoAplicado, String observaciones, EstadoSeleccion estado, double puntajeFinal, LocalDate fechaInicio, LocalDate fechaDecision) {
-        this.id = id;
-        this.aspiranteId = aspiranteId;
-        this.nombreAspirante = nombreAspirante;
-        this.cargoAplicado = cargoAplicado;
-        this.observaciones = observaciones;
-        this.estado = estado;
-        this.puntajeFinal = puntajeFinal;
-        this.fechaInicio = fechaInicio;
-        this.fechaDecision = fechaDecision;
-    }
+    private Double puntajeFinal;
+    private LocalDate fechaInicio;
+    private LocalDate fechaDecision;
+    private String observaciones;
 
     public ProcesoSeleccion() {
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
+    public ProcesoSeleccion(Long id, Long aspiranteId, String nombreAspirante, String cargoAplicado,
+                            EstadoSeleccion estado, Double puntajeFinal, LocalDate fechaInicio,
+                            LocalDate fechaDecision, String observaciones) {
         this.id = id;
-    }
-
-    public Long getAspiranteId() {
-        return aspiranteId;
-    }
-
-    public void setAspiranteId(Long aspiranteId) {
         this.aspiranteId = aspiranteId;
-    }
-
-    public String getNombreAspirante() {
-        return nombreAspirante;
-    }
-
-    public void setNombreAspirante(String nombreAspirante) {
         this.nombreAspirante = nombreAspirante;
-    }
-
-    public String getCargoAplicado() {
-        return cargoAplicado;
-    }
-
-    public void setCargoAplicado(String cargoAplicado) {
         this.cargoAplicado = cargoAplicado;
-    }
-
-    public String getObservaciones() {
-        return observaciones;
-    }
-
-    public void setObservaciones(String observaciones) {
+        this.estado = estado;
+        this.puntajeFinal = puntajeFinal;
+        this.fechaInicio = fechaInicio;
+        this.fechaDecision = fechaDecision;
         this.observaciones = observaciones;
     }
 
-    public EstadoSeleccion getEstado() {
-        return estado;
-    }
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-    public void setEstado(EstadoSeleccion estado) {
-        this.estado = estado;
-    }
+    public Long getAspiranteId() { return aspiranteId; }
+    public void setAspiranteId(Long aspiranteId) { this.aspiranteId = aspiranteId; }
 
-    public double getPuntajeFinal() {
-        return puntajeFinal;
-    }
+    public String getNombreAspirante() { return nombreAspirante; }
+    public void setNombreAspirante(String nombreAspirante) { this.nombreAspirante = nombreAspirante; }
 
-    public void setPuntajeFinal(double puntajeFinal) {
-        this.puntajeFinal = puntajeFinal;
-    }
+    public String getCargoAplicado() { return cargoAplicado; }
+    public void setCargoAplicado(String cargoAplicado) { this.cargoAplicado = cargoAplicado; }
 
-    public LocalDate getFechaInicio() {
-        return fechaInicio;
-    }
+    public EstadoSeleccion getEstado() { return estado; }
+    public void setEstado(EstadoSeleccion estado) { this.estado = estado; }
 
-    public void setFechaInicio(LocalDate fechaInicio) {
-        this.fechaInicio = fechaInicio;
-    }
+    public Double getPuntajeFinal() { return puntajeFinal; }
+    public void setPuntajeFinal(Double puntajeFinal) { this.puntajeFinal = puntajeFinal; }
 
-    public LocalDate getFechaDecision() {
-        return fechaDecision;
-    }
+    public LocalDate getFechaInicio() { return fechaInicio; }
+    public void setFechaInicio(LocalDate fechaInicio) { this.fechaInicio = fechaInicio; }
 
-    public void setFechaDecision(LocalDate fechaDecision) {
-        this.fechaDecision = fechaDecision;
-    }
+    public LocalDate getFechaDecision() { return fechaDecision; }
+    public void setFechaDecision(LocalDate fechaDecision) { this.fechaDecision = fechaDecision; }
 
-    public void registrarEntrevista (int e) {
-
-    }
-
-    public void calcularPuntajeFinal () {
-
-    }
-
-    public void aprobar () {
-
-    }
-
-    public void rechazar (String motivo){
-
-    }
-
-    public boolean estaAprobado () {
-        return false;
-    }
-
-
-
-
+    public String getObservaciones() { return observaciones; }
+    public void setObservaciones(String observaciones) { this.observaciones = observaciones; }
 }
