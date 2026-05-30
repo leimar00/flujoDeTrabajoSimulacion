@@ -20,8 +20,10 @@ public class ProcesoSeleccionJpaEntity {
     private Long id;
 
     private Long aspiranteId;
+    private Long vacanteId;
     private String nombreAspirante;
     private String cargoAplicado;
+    private String etapa;
 
     @Enumerated(EnumType.STRING)
     private EstadoSeleccion estado;
